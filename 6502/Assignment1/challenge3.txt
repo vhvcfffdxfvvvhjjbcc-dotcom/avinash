@@ -1,0 +1,48 @@
+#include <stdio.h>   // Allows use of printf and scanf
+
+int main() {
+
+    float num1, num2, result; // Variables for numbers and result
+    char operator;            // Variable to store the operator
+
+    printf("Enter first number: ");
+    scanf("%f", &num1);       // Read first number
+
+    printf("Enter second number: ");
+    scanf("%f", &num2);       // Read second number
+
+    printf("Enter an operator (+, -, *, /): ");
+    scanf(" %c", &operator);  // Read operator (space avoids newline issue)
+
+    switch (operator) {       // Switch based on operator
+
+        case '+':
+            result = num1 + num2;
+            printf("Result: %.2f\n", result);
+            break;
+
+        case '-':
+            result = num1 - num2;
+            printf("Result: %.2f\n", result);
+            break;
+
+        case '*':
+            result = num1 * num2;
+            printf("Result: %.2f\n", result);
+            break;
+
+        case '/':
+            if (num2 == 0) {  // Check for division by zero
+                printf("Error: Division by zero is not allowed.\n");
+            } else {
+                result = num1 / num2;
+                printf("Result: %.2f\n", result);
+            }
+            break;
+
+        default:
+            printf("Error: Invalid operator.\n"); // Handles invalid input
+    }
+
+    return 0; // End of program
+}

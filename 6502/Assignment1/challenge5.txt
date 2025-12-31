@@ -1,0 +1,15 @@
+#include <stdio.h>   // Allows use of printf
+
+int main() {
+
+    int i, j;        // Loop control variables
+
+    for (i = 1; i <= 5; i++) {        // Outer loop controls number of rows
+        for (j = 1; j <= i; j++) {    // Inner loop prints stars in each row
+            printf("*");
+        }
+        printf("\n");                 // Move to the next line after each row
+    }
+
+    return 0;        // End of program
+}
