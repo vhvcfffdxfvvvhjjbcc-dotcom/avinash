@@ -1,0 +1,42 @@
+#include <stdio.h>   // Enables printf and scanf
+
+/* Function to add two numbers */
+float add(float a, float b) {
+    return a + b;   // Return sum
+}
+
+/* Function to subtract two numbers */
+float subtract(float a, float b) {
+    return a - b;   // Return difference
+}
+
+/* Function to multiply two numbers */
+float multiply(float a, float b) {
+    return a * b;   // Return product
+}
+
+/* Function to divide two numbers */
+float divide(float a, float b) {
+    if (b == 0)     // Check for division by zero
+        return 0;   // Return 0 if invalid (simple handling)
+    return a / b;   // Return quotient
+}
+
+int main() {
+
+    float num1, num2;
+
+    printf("Enter two numbers: ");
+    scanf("%f %f", &num1, &num2);   // Read inputs
+
+    printf("Addition: %.2f\n", add(num1, num2));
+    printf("Subtraction: %.2f\n", subtract(num1, num2));
+    printf("Multiplication: %.2f\n", multiply(num1, num2));
+
+    if (num2 != 0)
+        printf("Division: %.2f\n", divide(num1, num2));
+    else
+        printf("Division: Error (division by zero)\n");
+
+    return 0;   // End of program
+}

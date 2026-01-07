@@ -1,0 +1,42 @@
+#include <stdio.h>   // Enables printf and scanf
+
+int main() {
+
+    int n, i;        // n = number of elements, i = loop variable
+    float sum = 0, average;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);              // Read size of the array
+
+    int arr[n];                   // Array size decided at runtime (not hardcoded)
+
+    /* Read array elements */
+    for (i = 0; i < n; i++) {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+        sum += arr[i];            // Add each element to sum
+    }
+
+    /* Initialize largest and smallest */
+    int largest = arr[0];
+    int smallest = arr[0];
+
+    /* Find largest and smallest */
+    for (i = 1; i < n; i++) {
+        if (arr[i] > largest)
+            largest = arr[i];
+
+        if (arr[i] < smallest)
+            smallest = arr[i];
+    }
+
+    average = sum / n;            // Calculate average
+
+    /* Display results */
+    printf("\nSum = %.2f\n", sum);
+    printf("Average = %.2f\n", average);
+    printf("Largest = %d\n", largest);
+    printf("Smallest = %d\n", smallest);
+
+    return 0;                     // End of program
+}
